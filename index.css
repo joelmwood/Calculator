@@ -1,0 +1,86 @@
+body {
+    background-color: tan;
+}
+
+.calcContainer {
+    margin: 0 auto;
+    width: 350px;
+    /* height: 600px; */
+    border: 1px solid black;
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+
+    /*Can the user still select the buttons?????  */
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: grey;
+}
+
+.btn:active {
+    background-color: black;
+    color: white;
+}
+
+.grid-item-display {
+    grid-column: 1 / span 4;
+    background-color: rgb(51, 51, 51);
+    color: white;
+    text-align: right;
+}
+
+
+.grid-item-equals {
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: blue;
+    color: white;
+}
+
+.grid-item-equals:hover {
+    background-color: rgb(68, 68, 255);
+}
+
+.grid-item-equals:active {
+    background-color: blue;
+}
+
+.grid-item-clear {
+    grid-column: 3 / span 2;
+    /* font-size: 15px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: red;
+    color: white;
+}
+
+.grid-item-clear:hover {
+    background-color: rgb(255, 96, 96);
+    color: white;
+
+}
+
+.grid-item-clear:active {
+    background-color: red;
+    color: white;
+}
