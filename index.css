@@ -4,6 +4,7 @@ body {
 
 .calcContainer {
     margin: 0 auto;
+    margin-top: 50px;
     width: 350px;
     /* height: 600px; */
     border: 1px solid black;
@@ -39,16 +40,21 @@ body {
 }
 
 .grid-item-display {
+    height:34px;
     grid-column: 1 / span 4;
     background-color: rgb(51, 51, 51);
     color: white;
     text-align: right;
 }
+.grid-item-display-results{
+    font-size: 15px;
+    height: 10px;
+}
 
 
 .grid-item-equals {
     grid-column: 4 / span 1;
-    grid-row: 3 / span 3;
+    grid-row: 5 / span 2;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -83,4 +89,22 @@ body {
 .grid-item-clear:active {
     background-color: red;
     color: white;
+}
+
+.grid-item-backspace{
+    background-color: darkgray;
+    color: white;
+
+    font-size: 28px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.grid-item-backspace:hover{
+    background-color: black;
+}
+.grid-item-backspace:active{
+    background-color: white;
+    color: black;
 }

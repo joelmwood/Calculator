@@ -11,25 +11,28 @@
 
 <body>
     <div class="calcContainer grid-container">
-        <div class="grid-item grid-item-display">0</div>
-        <div class="grid-item grid-item-plus btn">+</div>
-        <div class="grid-item grid-item-subtract btn">-</div>
-        <div class="grid-item grid-item-multiply btn">*</div>
-        <div class="grid-item grid-item-divide btn">/</div>
-        <div class="grid-item grid-item-seven btn">7</div>
-        <div class="grid-item grid-item-eight btn">8</div>
-        <div class="grid-item grid-item-nine btn">9</div>
-        <div class="grid-item grid-item-four btn">4</div>
-        <div class="grid-item grid-item-five btn">5</div>
-        <div class="grid-item grid-item-six btn">6</div>
-        <div class="grid-item grid-item-one btn">1</div>
-        <div class="grid-item grid-item-two btn">2</div>
-        <div class="grid-item grid-item-three btn">3</div>
-        <div class="grid-item grid-item-equals btn">=</div>
-        <div class="grid-item grid-item-zero btn">0</div>
-        <div class="grid-item grid-item-dot btn">.</div>
-        <div class="grid-item grid-item-clear btn">AC</div>
+        <div class="grid-item grid-item-display grid-item-display-results" id="calc-display-results"></div>
+        <div class="grid-item grid-item-display" id="calc-display">0</div>
+        <div class="grid-item grid-item-plus btn" id="calc-btn-add">+</div>
+        <div class="grid-item grid-item-subtract btn" id="calc-btn-subtract">-</div>
+        <div class="grid-item grid-item-multiply btn" id="calc-btn-multiply">*</div>
+        <div class="grid-item grid-item-divide btn" id="calc-btn-divide">/</div>
+        <div class="grid-item grid-item-seven btn" id="calc-btn-seven">7</div>
+        <div class="grid-item grid-item-eight btn" id="calc-btn-eight">8</div>
+        <div class="grid-item grid-item-nine btn" id="calc-btn-nine">9</div>
+        <div class="grid-item grid-item-backspace btn" id="calc-btn-backspace">DEL</div>
+        <div class="grid-item grid-item-four btn" id="calc-btn-four">4</div>
+        <div class="grid-item grid-item-five btn" id="calc-btn-five">5</div>
+        <div class="grid-item grid-item-six btn" id="calc-btn-six">6</div>
+        <div class="grid-item grid-item-one btn" id="calc-btn-one">1</div>
+        <div class="grid-item grid-item-two btn" id="calc-btn-two">2</div>
+        <div class="grid-item grid-item-three btn" id="calc-btn-three">3</div>
+        <div class="grid-item grid-item-equals btn" id="calc-btn-equals">=</div>
+        <div class="grid-item grid-item-zero btn" id="calc-btn-zero">0</div>
+        <div class="grid-item grid-item-dot btn" id="calc-btn-dot">.</div>
+        <div class="grid-item grid-item-clear btn" id="calc-btn-all-clear">AC</div>
     </div>
+
 
     <script src="./index.js"></script>
 </body>
