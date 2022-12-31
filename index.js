@@ -5,26 +5,27 @@ let operator = "";
 
 function add(a, b){
     answer = a + b;
-    answer = answer.toFixed(2);
-
+    if(!Number.isInteger(answer)){
+        answer = answer.toFixed(2);
+    }
 }
 function subtract(a, b){
     answer =  a - b;
-    answer = answer.toFixed(2);
-
-
+    if(!Number.isInteger(answer)){
+        answer = answer.toFixed(2);
+    }
 }
 function multiply(a, b){
     answer = a * b;
-    answer = answer.toFixed(2);
-
-
+    if(!Number.isInteger(answer)){
+        answer = answer.toFixed(2);
+    }
 }
 function divide(a, b){
     answer = a / b;
-    answer = answer.toFixed(2);
-
-
+    if(!Number.isInteger(answer)){
+        answer = answer.toFixed(2);
+    }
 }
 
 
