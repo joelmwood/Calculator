@@ -61,6 +61,61 @@ document.getElementById("calc-btn-backspace").addEventListener("click", backspac
 document.getElementById("calc-btn-all-clear").addEventListener("click", clearDisplayAndResults);
 document.getElementById("calc-btn-equals").addEventListener("click", displayResults);
 
+
+document.addEventListener('keypress', function(event){
+    // console.log(` ${event.code}`);
+    // console.log(`${event.code}`);
+    if(event.code === 'Numpad1'){
+        //console.log(`${event.code}`);
+        updateDisplayOne();
+    }else if(event.code === 'Numpad2'){
+        //console.log(`${event.code}`);
+        updateDisplayTwo();
+    }else if(event.code === 'Numpad3'){
+        //console.log(`${event.code}`);
+        updateDisplayThree();
+    }else if(event.code === 'Numpad4'){
+        //console.log(`${event.code}`);
+        updateDisplayFour();
+    }else if(event.code === 'Numpad5'){
+        //console.log(`${event.code}`);
+        updateDisplayFive();
+    }else if(event.code === 'Numpad6'){
+        //console.log(`${event.code}`);
+        updateDisplaySix();
+    }else if(event.code === 'Numpad7'){
+        //console.log(`${event.code}`);
+        updateDisplaySeven();
+    }else if(event.code === 'Numpad8'){
+        //console.log(`${event.code}`);
+        updateDisplayEight();
+    }else if(event.code === 'Numpad9'){
+        //console.log(`${event.code}`);
+        updateDisplayNine();
+    }else if(event.code === 'Numpad0'){
+        //console.log(`${event.code}`);
+        updateDisplayZero();
+    }else if(event.code === "NumpadDecimal"){
+        //console.log(`${event.code}`);
+        updateDisplayDot();
+    }else if(event.code === "NumpadEnter"){
+        //console.log(`${event.code}`);
+        displayResults();
+    }else if(event.code === "NumpadAdd"){
+        //console.log(`${event.code}`);
+        updateDisplayAdd();
+    }else if(event.code === "NumpadSubtract"){
+        //console.log(`${event.code}`);
+        updateDisplaySubtract();
+    }else if(event.code === "NumpadMultiply"){
+        //console.log(`${event.code}`);
+        updateDisplayMultiply();
+    }else if(event.code === "NumpadDivide"){
+        //console.log(`${event.code}`);
+        updateDisplayDivide();
+    }
+})
+
 function updateDisplayOne(){
         updateDisplay("1");
 }
