@@ -22,10 +22,20 @@ function multiply(a, b){
     }
 }
 function divide(a, b){
-    answer = a / b;
-    if(!Number.isInteger(answer)){
-        answer = answer.toFixed(2);
+    if(b === 0){
+        checkDivideByZero();
+    }else{
+        answer = a / b;
+        if(!Number.isInteger(answer)){
+            answer = answer.toFixed(2);
+        }
     }
+    
+}
+
+function checkDivideByZero(){
+    alert("Silly Goose, You Can't Divide by Zero.");
+
 }
 
 
@@ -193,17 +203,9 @@ function displayResults(){
     document.getElementById("calc-display-results").innerHTML = answer;
     document.getElementById("calc-display").innerHTML = 0;
 
-    console.log("input01: " + input01);
-    console.log("input02: " + input02);
-    console.log("answer: " + answer);
-    
-
     input01 = 0;
     input02 = 0;
 
-    console.log("input01: " + input01);
-    console.log("input02: " + input02);
-    console.log("answer: " + answer);
 }
 function calculateAnswer(){
     if(operator === "+"){
