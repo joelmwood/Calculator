@@ -161,7 +161,6 @@ function updateDisplayDot(){
     }        
 }
 function updateDisplay(string){
-
         let stringToFloat = (document.getElementById("calc-display-input").innerHTML);
         if(stringToFloat === "0"){
             document.getElementById("calc-display-input").innerHTML = string;
@@ -192,6 +191,8 @@ function clearDisplayAndResults(){
     input = 0;
     answer = 0;
     operator = "";
+
+    console.clear();
 }
 function updateDisplayAdd(){
     operator  = "+"
@@ -213,53 +214,39 @@ function updateDisplayDivide(){
 
 }
 function moveNumInDisplayToResults(tempOperator){
-
-    console.log("input01: " + input01);
-    console.log("input02: " + input02);
-    console.log("answer: " + answer);
-
-
     operator = tempOperator;
     let results = document.getElementById("calc-display-results").innerHTML;
     let display = parseFloat(document.getElementById("calc-display-input").innerHTML);
-    if(results === "" && display === 0){
-        //do nothing
-    }
-    if(results.length === 0 && display !== 0){
-        input01 = display;
-        document.getElementById("calc-display-results").innerHTML = input01 + " " + operator;
+    let resultsLastChar = results[results.length - 1];
+
+    if(results.length === 0){
+        answer = display;
+        document.getElementById("calc-display-results").innerHTML = answer + " " + operator;
         document.getElementById("calc-display-input").innerHTML = 0;
     }
-    if(results.length !== 0 && input01 === 0 && answer === 0){
-        input02 = input01;
-        input01 = display;
-        document.getElementById("calc-display-results").innerHTML = input02 + " " + operator;
-        document.getElementById("calc-display-input").innerHTML = 0;
+    if(results.length !== 0 && resultsLastChar === "+" || resultsLastChar === "-" || resultsLastChar === "*" || resultsLastChar === "/" ){
+        document.getElementById("calc-display-results").innerHTML = answer + " " + operator;
     }
-    if(answer !==0 && display !== 0){
-        document.getElementById("calc-display-results").innerHTML = input01 + " " + operator;
+    if(results.length !== 0 && resultsLastChar !== "+" && resultsLastChar !== "-" && resultsLastChar !== "*" && resultsLastChar !== "/" ){
+        document.getElementById("calc-display-results").innerHTML = results + " " + operator;
     }
-    if(results.length !== 0 && display === 0 && answer !== 0){
-        console.log("hooray");
-        input01 = answer;
-        document.getElementById("calc-display-results").innerHTML = input01 + " " + operator;
-
-    }
-
-    // console.log("input01: " + input01);
-    // console.log("input02: " + input02);
-    // console.log("answer: " + answer);
-    
     
 }
 function displayResults(){
-    input02 = parseFloat(document.getElementById("calc-display-input").innerHTML);
-    calculateAnswer(input01, input02);
-    document.getElementById("calc-display-results").innerHTML = answer;
-    document.getElementById("calc-display-input").innerHTML = 0;
+    let results = document.getElementById("calc-display-results").innerHTML;
+    let resultsToArray = results.split(" ");
+    let resultsToNumber = parseFloat(resultsToArray[0]);
+    let display = parseFloat(document.getElementById("calc-display-input").innerHTML);
+    let resultsLastChar = results[results.length - 1];
+    
+    if(results.length !== 0 && resultsLastChar === "+" || resultsLastChar === "-" || resultsLastChar === "*" || resultsLastChar === "/" ){
+        input01 = resultsToNumber;
+        input02 = display;
+        calculateAnswer();
+        document.getElementById("calc-display-results").innerHTML = answer;
+        document.getElementById("calc-display-input").innerHTML = 0;
 
-    input01 = 0;
-    input02 = 0;
+    }
 
 }
 function calculateAnswer(){
