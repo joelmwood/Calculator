@@ -147,14 +147,14 @@ function updateDisplayZero(){
         updateDisplay("0");
 }
 function updateDisplayDot(){
-    let string = document.getElementById("calc-display").innerHTML;
+    let string = document.getElementById("calc-display-input").innerHTML;
     let subString = ".";
     if(string.includes(subString)){
         //stops user from adding additional dot to number
     }else{
         //if number is already zero, adds a zero in front of the dot for readability;
         if(string === "0"){
-            document.getElementById("calc-display").innerHTML = "0.";
+            document.getElementById("calc-display-input").innerHTML = "0.";
         }else{
             updateDisplay(".");
         }
@@ -162,32 +162,32 @@ function updateDisplayDot(){
 }
 function updateDisplay(string){
 
-        let stringToFloat = (document.getElementById("calc-display").innerHTML);
+        let stringToFloat = (document.getElementById("calc-display-input").innerHTML);
         if(stringToFloat === "0"){
-            document.getElementById("calc-display").innerHTML = string;
+            document.getElementById("calc-display-input").innerHTML = string;
         }else{
-            document.getElementById("calc-display").innerHTML += string;
+            document.getElementById("calc-display-input").innerHTML += string;
         }      
 }
 function backspace(){
-    let string = document.getElementById("calc-display").innerHTML;
+    let string = document.getElementById("calc-display-input").innerHTML;
     if(string === "0"){
         //if display box is 0, do nothing
     }else if(string.length === 1){
         //if only one number left, resets display to zero
-        document.getElementById("calc-display").innerHTML = 0;
+        document.getElementById("calc-display-input").innerHTML = 0;
     }else{
         //if more than one number on the display, deletes the last number
         let editedString = string.slice(0, -1);
-        document.getElementById("calc-display").innerHTML = editedString;
+        document.getElementById("calc-display-input").innerHTML = editedString;
     }
     
 }
 function clearDisplay(){
-    document.getElementById("calc-display").innerHTML = 0;
+    document.getElementById("calc-display-input").innerHTML = 0;
 }
 function clearDisplayAndResults(){
-    document.getElementById("calc-display").innerHTML = "0";
+    document.getElementById("calc-display-input").innerHTML = "0";
     document.getElementById("calc-display-results").innerHTML = "";
     input = 0;
     answer = 0;
@@ -221,20 +221,20 @@ function moveNumInDisplayToResults(tempOperator){
 
     operator = tempOperator;
     let results = document.getElementById("calc-display-results").innerHTML;
-    let display = parseFloat(document.getElementById("calc-display").innerHTML);
+    let display = parseFloat(document.getElementById("calc-display-input").innerHTML);
     if(results === "" && display === 0){
         //do nothing
     }
     if(results.length === 0 && display !== 0){
         input01 = display;
         document.getElementById("calc-display-results").innerHTML = input01 + " " + operator;
-        document.getElementById("calc-display").innerHTML = 0;
+        document.getElementById("calc-display-input").innerHTML = 0;
     }
     if(results.length !== 0 && input01 === 0 && answer === 0){
         input02 = input01;
         input01 = display;
         document.getElementById("calc-display-results").innerHTML = input02 + " " + operator;
-        document.getElementById("calc-display").innerHTML = 0;
+        document.getElementById("calc-display-input").innerHTML = 0;
     }
     if(answer !==0 && display !== 0){
         document.getElementById("calc-display-results").innerHTML = input01 + " " + operator;
@@ -253,10 +253,10 @@ function moveNumInDisplayToResults(tempOperator){
     
 }
 function displayResults(){
-    input02 = parseFloat(document.getElementById("calc-display").innerHTML);
+    input02 = parseFloat(document.getElementById("calc-display-input").innerHTML);
     calculateAnswer(input01, input02);
     document.getElementById("calc-display-results").innerHTML = answer;
-    document.getElementById("calc-display").innerHTML = 0;
+    document.getElementById("calc-display-input").innerHTML = 0;
 
     input01 = 0;
     input02 = 0;
